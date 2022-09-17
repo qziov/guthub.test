@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>空间矢量转化</title>
+    <script>
+      function startTime(){
+        var today=new Date();
+        var h=today.getHours();
+        var m=today.getMinutes();
+        var s=today.getSeconds();// 在小于10的数字前加一个‘0’
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+        t=setTimeout(function(){startTime()},100);
+      }
+      function checkTime(i){
+        if (i<10){
+          i="0" + i;
+        }
+        return i;
+      }
+      </script>
+    <style>
+    a:link {
+
+      text-decoration: none; color:black;
+    }/*未访问的链接显示为hei色，text-decoration:none将下划线隐藏*/
+    a:visited {
+
+      color:black;
+    } /*用户已访问过的链接显示黑色*/
+    a:active {
+
+      color:yellow;
+    }  /* 链接被点击那一刻显示黄色 */
+    .Body{
+
+      background-color: rgb(172, 216, 244)
+    }
+    a.Title:hover{color:white;}
+    .TitleBox1{
+
+      background-color:rgb(191, 230, 223);
+      text-align:center;
+      font-size: 200%
+    }
+    .TitleBox2{
+
+      background-color:rgb(191, 230, 223) ;
+      text-align: center;
+      font-size: 200%;
+    }
+    .Box1{
+
+      display: flex;
+      flex-wrap:nowrap
+    }
+    .Box2{
+      
+      display: flex;
+      flex-wrap:nowrap
+    }
+    div.sticky{
+     
+    position: sticky;
+    top: 0;
+    background-color: rgb(191, 230, 223);
+    }
+ul 
+    {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(158, 236, 106);
+    }
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(200, 241, 194);
+}
+   </style>
+</head>
+
+<body class="Body" onload="startTime()">
+<div class="sticky" style="display: flex;justify-content: center;">
+  <div id="txt"   ></div>
+</div>
+  <ul>
+    
+    <li><a href="http://map.baidu.com"                      target="_blank" >地图</a></li>
+    <li><a href="http://image.baidu.com/"                   target="_blank" >图片</a></li>
+    <li><a href="https://www.gscloud.cn/"                   target="iframe_a">地理空间数据云</a></li>
+    <li><a href="http://www.stats.gov.cn/"                  target="iframe_a">国家统计局</a></li>
+    
+  </ul>
+      <div class="TitleBox1">
+        在<a href="https://datav.aliyun.com/portal/school/atlas/area_selector"  class="Title" target="_blank">阿里地理空间数据云</a>下载你所需要的json文件
+      </div>
+
+<div class="Box1">
+    <iframe src="https://datav.aliyun.com/portal/school/atlas/area_selector"width="1000" height="500"></iframe>
+    <textarea rows="32" cols="50" >
+      TIPS
+      1
+      2
+      3
+    </textarea>
+</div>
+
+        <div class="TitleBox2">
+        在<a href="https://mapshaper.org/" style="text-decoration:none;" class="Title" target="_blank">mapshaper</a>中导入所下载的json文件，即可导出所需要的文件格式
+        </div>  
+  <div class="Box2">
+    <iframe src="https://mapshaper.org/" width="1000" height="500" name="stew"></iframe>
+    <textarea rows="32" cols="50" >
+      TIPS
+      1
+      2
+      3
+    </textarea>
+  </div>  
+    <p>QQ:1041460426</p>   
+</body>
+
+</html>
